@@ -5,26 +5,26 @@ external:
     repoURL: https://github.com/ddevadat/gitops-poc
     targetRevision: HEAD
   components:
-    - name: istio-ingressgateway
-      path: workload/mosip/external-modules/istio-ingressgateway
-      namespace: istio-system
-      annotations:
-        argocd.argoproj.io/sync-wave: "-100"
-        argocd.argoproj.io/manifest-generate-paths: .
-
-    - name: istio-ingressgateway-internal
-      path: workload/mosip/external-modules/istio-ingressgateway-internal
-      namespace: istio-system
-      annotations:
-        argocd.argoproj.io/sync-wave: "-100"
-        argocd.argoproj.io/manifest-generate-paths: .
-
-    # - name: httpbin
-    #   path: workload/mosip/external-modules/httpbin
+    # - name: istio-ingressgateway
+    #   path: workload/mosip/external-modules/istio-ingressgateway
     #   namespace: istio-system
     #   annotations:
-    #     argocd.argoproj.io/sync-wave: "-99"
+    #     argocd.argoproj.io/sync-wave: "-100"
     #     argocd.argoproj.io/manifest-generate-paths: .
+
+    # - name: istio-ingressgateway-internal
+    #   path: workload/mosip/external-modules/istio-ingressgateway-internal
+    #   namespace: istio-system
+    #   annotations:
+    #     argocd.argoproj.io/sync-wave: "-100"
+    #     argocd.argoproj.io/manifest-generate-paths: .
+
+    - name: httpbin
+      path: workload/mosip/external-modules/httpbin
+      namespace: istio-system
+      annotations:
+        argocd.argoproj.io/sync-wave: "-99"
+        argocd.argoproj.io/manifest-generate-paths: .
 
     # - name: mosip-monitoring
     #   repo_url: https://prometheus-community.github.io/helm-charts
@@ -41,19 +41,19 @@ external:
     #     argocd.argoproj.io/sync-wave: "-99"
     #     argocd.argoproj.io/manifest-generate-paths: .
 
-    - name: cassandra
-      path: workload/mosip/external-modules/cassandra
-      namespace: cass-operator
-      annotations:
-        argocd.argoproj.io/sync-wave: "-99"
-        argocd.argoproj.io/manifest-generate-paths: .
+    # - name: cassandra
+    #   path: workload/mosip/external-modules/cassandra
+    #   namespace: cass-operator
+    #   annotations:
+    #     argocd.argoproj.io/sync-wave: "-99"
+    #     argocd.argoproj.io/manifest-generate-paths: .
 
-    - name: cloudnative-pg
-      path: workload/mosip/external-modules/cloudnative-pg
-      namespace: cloudnative-pg
-      annotations:
-        argocd.argoproj.io/sync-wave: "-99"
-        argocd.argoproj.io/manifest-generate-paths: .
+    # - name: cloudnative-pg
+    #   path: workload/mosip/external-modules/cloudnative-pg
+    #   namespace: cloudnative-pg
+    #   annotations:
+    #     argocd.argoproj.io/sync-wave: "-99"
+    #     argocd.argoproj.io/manifest-generate-paths: .
  
 
     # - name: postgres
