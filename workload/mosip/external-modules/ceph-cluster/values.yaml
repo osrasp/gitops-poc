@@ -4,12 +4,12 @@ ceph_domain: ceph.<path:ocivault#mosip_domain#latest | base64decode>
 rook-ceph-cluster:
   toolbox:
     enabled: true
-  tolerations: 
-  - key: "node-role.kubernetes.io/rook-node"
-    operator: "Exists"
-    effect: "NoSchedule"
-  affinity: 
-    oke.oraclecloud.com/pool.name: rook
+    tolerations: 
+    - key: "node-role.kubernetes.io/rook-node"
+      operator: "Exists"
+      effect: "NoSchedule"
+    affinity: 
+      oke.oraclecloud.com/pool.name: rook
   cephClusterSpec:
     dashboard:
       enabled: true
