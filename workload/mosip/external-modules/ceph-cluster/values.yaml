@@ -8,6 +8,9 @@ rook-ceph-cluster:
   affinity: 
     oke.oraclecloud.com/pool.name: rook
   cephClusterSpec:
+    dashboard:
+      enabled: true
+      ssl: false
     placement:
       all:
         nodeAffinity:
