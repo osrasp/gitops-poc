@@ -14,6 +14,15 @@ rook-ceph-cluster:
     dashboard:
       enabled: true
       ssl: false
+    mgr:
+      # When higher availability of the mgr is needed, increase the count to 2.
+      # In that case, one mgr will be active and one in standby. When Ceph updates which
+      # mgr is active, Rook will update the mgr services to match the active mgr.
+      count: 2
+      allowMultiplePerNode: false
+      modules:
+        - name: rook
+          enabled: true
     placement:
       all:
         nodeAffinity:
