@@ -48,6 +48,13 @@ external:
     #     argocd.argoproj.io/sync-wave: "-99"
     #     argocd.argoproj.io/manifest-generate-paths: .
 
+    - name: ceph-cluster
+      path: workload/mosip/external-modules/ceph-cluster
+      namespace: rook-ceph
+      annotations:
+        argocd.argoproj.io/sync-wave: "-99"
+        argocd.argoproj.io/manifest-generate-paths: .
+
     # - name: cloudnative-pg
     #   path: workload/mosip/external-modules/cloudnative-pg
     #   namespace: cloudnative-pg
