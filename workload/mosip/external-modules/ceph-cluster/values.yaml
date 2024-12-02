@@ -1,4 +1,5 @@
 ceph_istio_enabled: true
+ceph_domain: ceph.<path:ocivault#mosip_domain#latest | base64decode>
 
 rook-ceph-cluster:
   toolbox:
