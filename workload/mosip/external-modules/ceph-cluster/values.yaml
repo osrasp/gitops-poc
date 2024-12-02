@@ -1,3 +1,26 @@
 rook-ceph-cluster:
   toolbox:
     enabled: true
+  tolerations: 
+  - key: "node-role.kubernetes.io/rook-node"
+    operator: "Exists"
+    effect: "NoSchedule"
+  affinity: 
+    oke.oraclecloud.com/pool.name: rook
+  cephClusterSpec:
+    placement:
+      all:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: oke.oraclecloud.com/pool.name
+                  operator: In
+                  values:
+                  - rook
+        podAffinity:
+          oke.oraclecloud.com/pool.name: rook
+        tolerations:
+        - key: "node-role.kubernetes.io/rook-node"
+          operator: "Exists"
+          effect: "NoSchedule"
