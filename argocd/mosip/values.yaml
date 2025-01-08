@@ -2,7 +2,7 @@ external:
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/ddevadat/gitops-poc
+    repoURL: https://github.com/osrasp/gitops-poc
     targetRevision: HEAD
   components:
     # - name: istio-ingressgateway
@@ -155,7 +155,7 @@ core:
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/ddevadat/gitops-poc
+    repoURL: https://github.com/osrasp/gitops-poc
     targetRevision: HEAD
   components:
     # - name: config-server
@@ -345,7 +345,7 @@ mimoto:
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/ddevadat/gitops-poc
+    repoURL: https://github.com/osrasp/gitops-poc
     targetRevision: HEAD
   components:
     # - name: mimoto-onboarding
@@ -360,7 +360,7 @@ esignet:
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/ddevadat/gitops-poc
+    repoURL: https://github.com/osrasp/gitops-poc
     targetRevision: HEAD
   components:
     # - name: esignet-postgres-init
